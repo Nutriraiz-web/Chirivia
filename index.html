@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NutriRaiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #E0B796; /* ocre pálido */
+    }
+h1 {
+      color: #2c3e50; /* blanco */
+    }
+    header {
+      background-color: #C8E8A9; /* verde pastel */
+      color: #2c3e50;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+    header img {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 110px;
+      height: auto;
+    }
+    section {
+      padding: 40px;
+      text-align: center;
+    }
+    section img {
+      display: block;
+      margin: 20px auto;
+      width: 300px;
+      height: auto;
+    }
+    form {
+      background: #f4f4f4;
+      padding: 20px;
+      margin: 40px auto;
+      width: 300px;
+      border-radius: 8px;
+    }
+    input {
+      padding: 10px;
+      margin: 5px;
+      width: 90%;
+    }
+    .cta {
+      background: #e74c3c;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .cta:hover {
+      background: #c0392b;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="imagenes/logo.png" alt="Logo empresa" width="400">
+    <h1>NutriRaíz</h1>
+    <p>!Nutritiva y Deliciosa!</p>
+  </header>
+
+  <section>
+    <h2>Chirivía, la mejor aliada para tu cuerpo</h2>
+    <p>
+      La chirivía es una hortaliza de raíz comestible, parecida a la zanahoria en vez de color naranja es blanca o color crema, su nombre científico es Pastinaca Sativa. se cultiva especialmente en climas fríos o templados y pertenece a la misma familia de la zanahoria y el apio. Es alargada, gruesa con un sabor ligeramente dulce, muy suave, su siembra es directamente por semilla en el suelo.
+    </p>
+
+    <p>¿Sus beneficios? Tan variados como las deliciosas comidas que se pueden preparar con la chirivía:para empezar, es una raíz de fácil digestión, recomendada para estómagos delicados, además, ayuda a combatir la retención de líquidos y, finalmente, debido a su contenido de ácido fólico, es recomendada para mujeres que se encuentran en estado de embarazo y durante la lactancia. 
+    </p>
+    
+    <p>En lo que respecta a la información nutricional, la raíz de chirivía presenta por cada 100g 75-90 kcal, ~4.9g entre fibra soluble e insoluble, 1.2g de proteína, 375mg de Potasio, 18g de hidratos de carbono, 17mg de vitamina C y 36 mg de Calcio, además de contener tambien en menores cantidades vitamina B9 y vitamina K.
+    </p>
+    <img src="imagenes/producto.png" alt="Producto destacado">
+  </section>
+
+  <footer>
+    <form id="leadForm">
+      <h3>Contáctanos</h3>
+      <input type="text" id="nombre" placeholder="Tu nombre" required><br>
+      <input type="email" id="email" placeholder="Tu correo" required><br>
+      <button type="submit" class="cta">Recibir propuesta</button>
+    </form>
+    <p id="mensaje" style="text-align:center;"></p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('leadForm');
+    const mensaje = document.getElementById('mensaje');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const nombre = document.getElementById('nombre').value;
+      const email = document.getElementById('email').value;
+
+      mensaje.textContent = `¡Gracias ${nombre}! Te contactaremos pronto al correo ${email}.`;
+      form.reset();
+    });
+  </script>
+</body>
+</html>
