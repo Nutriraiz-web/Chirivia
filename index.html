@@ -5,25 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NutriRaiz</title>
   <style>
-
-   p {
-  text-align: justify; /* justifica los párrafos */
-}
-
-.article {
-  column-count: 2;      /* dos columnas estilo periódico */
-  column-gap: 40px;     /* espacio entre columnas */
-  text-align: justify;  /* justifica el texto dentro */
-}
-
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #E0B796; /* ocre pálido */
     }
-h1 {
-      color: #2c3e50; /* blanco */
+    h1 {
+      color: #2c3e50;
     }
     header {
       background-color: #C8E8A9; /* verde pastel */
@@ -72,55 +61,71 @@ h1 {
     .cta:hover {
       background: #c0392b;
     }
+
+    /* Estilo de las pestañas */
+    details {
+      background: #ffffff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin: 15px auto;
+      padding: 10px;
+      width: 80%;
+      text-align: left;
+    }
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+      color: #2c3e50;
+      list-style: none;
+    }
+    /* Iconos ➕ y ➖ */
+    summary::before {
+      content: "➕ ";
+      color: #2c3e50;
+      font-size: 1.2em;
+    }
+    details[open] summary::before {
+      content: "➖ ";
+    }
+    p {
+      text-align: justify;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
-
-  
   <header>
     <img src="imagenes/logo.png" alt="Logo empresa" width="400">
     <h1>NutriRaíz</h1>
-    <p>!Nutritiva y Deliciosa!</p>
+    <h2>¡Nutritiva y Deliciosa!</h2>
   </header>
    
   <section>
-  <h2>Chirivía, la mejor aliada para tu cuerpo</h2>
+    <h2>Chirivía, la mejor aliada para tu cuerpo</h2>
 
-  <div class="article">
-    <p>La chirivía es una hortaliza de raíz comestible, parecida a la zanahoria en vez de color naranja es blanca o color crema, su nombre científico es Pastinaca Sativa. se cultiva especialmente en climas fríos o templados y pertenece a la misma familia de la zanahoria y el apio. Es alargada, gruesa con un sabor ligeramente dulce, muy suave, su siembra es directamente por semilla en el suelo.</p>
+    <details>
+      <summary>¿Qué es?</summary>
+      <p>La chirivía es una hortaliza de raíz comestible, parecida a la zanahoria en vez de color naranja es blanca o color crema, su nombre científico es Pastinaca Sativa. Se cultiva especialmente en climas fríos o templados y pertenece a la misma familia de la zanahoria y el apio. Es alargada, gruesa con un sabor ligeramente dulce, muy suave, su siembra es directamente por semilla en el suelo.</p>
+    </details>
 
-    <p>¿Sus beneficios? Tan variados como las deliciosas comidas que se pueden preparar con la chirivía:para empezar, es una raíz de fácil digestión, recomendada para estómagos delicados, además, ayuda a combatir la retención de líquidos y, finalmente, debido a su contenido de ácido fólico, es recomendada para mujeres que se encuentran en estado de embarazo y durante la lactancia.</p>
-    
-    <p>En lo que respecta a la información nutricional, la raíz de chirivía presenta por cada 100g 75-90 kcal, ~4.9g entre fibra soluble e insoluble, 1.2g de proteína, 375mg de Potasio, 18g de hidratos de carbono, 17mg de vitamina C y 36 mg de Calcio, además de contener tambien en menores cantidades vitamina B9 y vitamina K.
-</p>
-  </div>
+    <details>
+      <summary>Beneficios a tu salud</summary>
+      <p>¿Sus beneficios? Tan variados como las deliciosas comidas que se pueden preparar con la chirivía: para empezar, es una raíz de fácil digestión, recomendada para estómagos delicados, además, ayuda a combatir la retención de líquidos y, finalmente, debido a su contenido de ácido fólico, es recomendada para mujeres que se encuentran en estado de embarazo y durante la lactancia.</p>
+    </details>
 
-  <img src="imagenes/producto.png" alt="Producto destacado">
-</section>
+    <details>
+      <summary>Información nutricional</summary>
+      <p>En lo que respecta a la información nutricional, la raíz de chirivía presenta por cada 100g 75-90 kcal, ~4.9g entre fibra soluble e insoluble, 1.2g de proteína, 375mg de Potasio, 18g de hidratos de carbono, 17mg de vitamina C y 36 mg de Calcio, además de contener también en menores cantidades vitamina B9 y vitamina K.</p>
+    </details>
 
+    <details>
+      <summary>Incluye la harina de chirivía en tu cocina con estas recetas</summary>
+      <p>Aquí podrás agregar tus recetas y contenido personalizado.</p>
+    </details>
+
+    <img src="imagenes/producto.png" alt="Producto destacado">
+  </section>
 
   <footer>
     <form id="leadForm">
       <h3>Contáctanos</h3>
-      <input type="text" id="nombre" placeholder="Tu nombre" required><br>
-      <input type="email" id="email" placeholder="Tu correo" required><br>
-      <button type="submit" class="cta">Recibir propuesta</button>
-    </form>
-    <p id="mensaje" style="text-align:center;"></p>
-  </footer>
-
-  <script>
-    const form = document.getElementById('leadForm');
-    const mensaje = document.getElementById('mensaje');
-
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
-      const nombre = document.getElementById('nombre').value;
-      const email = document.getElementById('email').value;
-
-      mensaje.textContent = `¡Gracias ${nombre}! Te contactaremos pronto al correo ${email}.`;
-      form.reset();
-    });
-  </script>
-</body>
-</html>
