@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NutriRaiz</title>
   <style>
+
+   p {
+  text-align: justify; /* justifica los párrafos */
+}
+
+.article {
+  column-count: 2;      /* dos columnas estilo periódico */
+  column-gap: 40px;     /* espacio entre columnas */
+  text-align: justify;  /* justifica el texto dentro */
+}
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -64,12 +75,19 @@ h1 {
   </style>
 </head>
 <body>
+
+  <div class="article">
+  <p>Este es el primer párrafo de tu artículo, que se verá justificado y dividido en columnas.</p>
+  <p>El segundo párrafo continúa en estilo periódico, ocupando las columnas enfrentadas.</p>
+  <p>El tercer párrafo completa la sección, mostrando cómo el texto se distribuye automáticamente en dos columnas.</p>
+</div>
+
   <header>
     <img src="imagenes/logo.png" alt="Logo empresa" width="400">
     <h1>NutriRaíz</h1>
     <p>!Nutritiva y Deliciosa!</p>
   </header>
-
+   
   <section>
     <h2>Chirivía, la mejor aliada para tu cuerpo</h2>
     <p>
